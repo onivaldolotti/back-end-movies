@@ -6,6 +6,8 @@ Repositório de teste
 
 ## Instalação
 
+Copiar o arquivo .env.example apenas como .env no diretorio raiz
+
 ```bash
 $ docker compose up
 ```
