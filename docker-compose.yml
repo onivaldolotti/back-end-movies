@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  db:
+    image: postgres
+    restart: on-failure
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=testewa
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+
+  app:
+    build: .
+    container_name: wa
+    ports:
+      - 5000:5000
+    volumes:
+      - .:/usr/app
+    depends_on:
+      - db
+    network_mode: host
+
+volumes:
+  pgdata:
