@@ -8,6 +8,7 @@ Repositório de teste
 
 Copiar o arquivo .env.example apenas como .env no diretorio raiz
 
+Para rodar a aplicação execute o comando:
 ```bash
 $ docker compose up
 ```
