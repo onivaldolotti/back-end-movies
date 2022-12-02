@@ -24,3 +24,7 @@ $ docker compose exec app npm run test:e2e
 # test coverage
 $ docker compose exec app npm run test:cov
 ```
+
+## Documentação
+
+A documentação do swagger esta no link http://localhost:5000/api/docs

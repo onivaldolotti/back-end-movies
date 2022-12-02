@@ -9,6 +9,14 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
+  app.enableCors({
+    origin: configService.get('CORS_ORIGIN'),
+    credentials: configService.get('CORS_CREDENTIALS') === 'true',
+    allowedHeaders: configService.get('CORS_ALLOW_HEADERS'),
+    preflightContinue: configService.get('CORS_PREFLIGHT_CONTINUE') === 'true',
+    optionsSuccessStatus: +configService.get('CORS_OPTIONS_SUCESS_STATUS'),
+  });
+
   const config = new DocumentBuilder()
     .setTitle('Movies')
     .setDescription('Movie API')
